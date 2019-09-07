@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+group = 'com.yxf.asmplugin'
+version = '1.0.8'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('/Users/Han/repo'))
+        }
+    }
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    implementation 'com.android.tools.build:gradle:3.3.2'
+
+
+    implementation 'javassist:javassist:3.12.1.GA'
+    implementation 'commons-io:commons-io:2.6'
+
+}
+
+repositories {
+    mavenCentral()
+}
